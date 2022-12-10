@@ -15,6 +15,11 @@ def calendar():
 def menu():
     return "-----Menu-----\n1 - Get Calendar\n2 - Exit\n"
 
+
+file = open('./pil/MyArt.txt', 'r')
+content = file.read()
+print(content)
+file.close()
 print("Welcome to CalendrierDistant...")
 print("login ...")
 time.sleep(2)
