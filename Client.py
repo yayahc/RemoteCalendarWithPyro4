@@ -10,28 +10,28 @@ uri = input("What is the Pyro URI? ").strip()
 maker = Pyro4.Proxy(uri)
 
 def calendar():
-    return "Calendar ->\nAnnee: {}\nMois: {}\nJour: {}".format(maker.getAnnee(),maker.getMois(),maker.getJour())
+    return "Calendar ->\Year: {}\nMonth: {}\nDay: {}".format(maker.getAnnee(),maker.getMois(),maker.getJour())
 
 def menu():
-    return "-----Menu-----\n1 - Get Calendar\n2 - Exit\n"
+    return "-----Menu-----\n1 - Get\n2 - Exit\n"
 
 
 file = open('./pil/MyArt.txt', 'r')
 content = file.read()
-print(content)
+#print(content)
 file.close()
-print("Welcome to CalendrierDistant...")
-print("login ...")
+print("Login...")
 time.sleep(2)
+print("Welcome to RemoteCalendar...")
 print(menu())
 
 while True:
-    user_answer = int(input('? '))
-    if user_answer == 1:
+    user_answer = input('? ')
+    if user_answer == "1":
         print(calendar())
         break
-    elif user_answer == 2:
-        print('logout...')
+    elif user_answer == "2":
+        print('Logout...')
         time.sleep(2)
         break
     else:
