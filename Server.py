@@ -11,8 +11,8 @@ try:
 	daemon = Pyro4.Daemon()
 	uri = daemon.register(RemoteCalendarClass)
 	print("succes")
-except e:
-	print("error", e)
+except:
+	print("error")
 
 print("Loading ...")
 time.sleep(2)

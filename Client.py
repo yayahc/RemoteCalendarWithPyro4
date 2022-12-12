@@ -26,8 +26,8 @@ while True:
     if user_answer == "1":
     	try:
 	        print(calendar())
-	    except e:
-	    	print("error", e)
+	    except:
+	    	print("error")
         break
     elif user_answer == "2":
         print('Logout...')
