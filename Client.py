@@ -16,10 +16,6 @@ def menu():
     return "-----Menu-----\n1 - Get\n2 - Exit\n"
 
 
-file = open('./pil/MyArt.txt', 'r')
-content = file.read()
-#print(content)
-file.close()
 print("Login...")
 time.sleep(2)
 print("Welcome to RemoteCalendar...")
@@ -28,7 +24,10 @@ print(menu())
 while True:
     user_answer = input('? ')
     if user_answer == "1":
-        print(calendar())
+    	try:
+	        print(calendar())
+	    except e:
+	    	print("error", e)
         break
     elif user_answer == "2":
         print('Logout...')

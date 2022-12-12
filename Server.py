@@ -7,9 +7,12 @@ import datetime
 import time
 from RemoteCalendar import RemoteCalendarClass
 
-
-daemon = Pyro4.Daemon()
-uri = daemon.register(RemoteCalendarClass)
+try:
+	daemon = Pyro4.Daemon()
+	uri = daemon.register(RemoteCalendarClass)
+	print("succes")
+except e:
+	print("error", e)
 
 print("Loading ...")
 time.sleep(2)
