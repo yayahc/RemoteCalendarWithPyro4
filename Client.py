@@ -1,16 +1,16 @@
 # Client
 # @author : yayahc
-# @version : 1.0
+# @version : 1.2
 
 import Pyro4
 import time
 
-uri = input("What is the Pyro URI? ").strip()
+uri = input("What is the Pyro Uri? ").strip()
 
-maker = Pyro4.Proxy(uri)
+pyroProxy = Pyro4.Proxy(uri)
 
 def calendar():
-    return "Calendar ->\Year: {}\nMonth: {}\nDay: {}".format(maker.getAnnee(),maker.getMois(),maker.getJour())
+    return "Calendar ->\nYear: {}\nMonth: {}\nDay: {}".format(pyroProxy.getYear(),pyroProxy.getMonth(),pyroProxy.getDay())
 
 def menu():
     return "-----Menu-----\n1 - Get\n2 - Exit\n"

@@ -1,24 +1,15 @@
-# Serveur
+# Serveur who get RemoteCalendar Objet
 # @author : yayahc
-# @version : 1.0
+# @version : 2.0
 
 import Pyro4
 import datetime
 import time
+from RemoteCalendar import RemoteCalendarClass
 
-@Pyro4.expose
-class CalendrierDistant(object):
-    def getAnnee(self):
-        return datetime.datetime.now().year
-
-    def getMois(self):
-        return datetime.datetime.now().month
-
-    def getJour(self):
-        return datetime.datetime.now().day
 
 daemon = Pyro4.Daemon()
-uri = daemon.register(CalendrierDistant)
+uri = daemon.register(RemoteCalendarClass)
 
 print("Loading ...")
 time.sleep(2)
