@@ -24,11 +24,8 @@ print(menu())
 while True:
     user_answer = input('? ')
     if user_answer == "1":
-    	try:
-	        print(calendar())
-	    except:
-	    	print("error")
-        break
+	    print(calendar())
+	    break
     elif user_answer == "2":
         print('Logout...')
         time.sleep(2)
